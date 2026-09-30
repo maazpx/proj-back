@@ -15,7 +15,7 @@ async function cadastrar(req, res) { //função de cadastro
         });
 
         res.status(201).json({ //transformando os dados fornecidos em formato json
-            id: usuario.id,
+            usuario_id: usuario.id,
             nome: usuario.nome,
             email: usuario.email,
         });

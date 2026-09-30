@@ -2,6 +2,8 @@ const express = require('express');
 const sequelize = require('./config/database');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const authRoutes = require('./routes/authRoutes');
+const livroRoutes = require('./routes/livroRoutes');
+const movimentacaoRoutes = require('./routes/movimentacaoRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -9,6 +11,8 @@ app.use(express.json());
 
 app.use(usuarioRoutes);
 app.use(authRoutes);
+app.use(livroRoutes);
+app.use(movimentacaoRoutes);
 
 sequelize.authenticate()
   .then(() => console.log('Conectado ao banco de dados'))
