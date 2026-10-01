@@ -16,6 +16,10 @@ const Movimentacao = sequelize.define('Movimentacao', {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
   },
+  usuario_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
  
 Livro.hasMany(Movimentacao, { foreignKey: 'livro_id' });
